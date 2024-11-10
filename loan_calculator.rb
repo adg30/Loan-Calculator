@@ -1,7 +1,7 @@
 =begin
 Last name: Corpuz
 Language: Ruby
-Paradigm(s)
+Paradigm(s): Procedural Programing
 =end
 
 =begin
