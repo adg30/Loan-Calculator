@@ -1,5 +1,12 @@
 package main
 
+/*
+
+Last name: Go
+Language: Go
+Paradigm(s): Procedural Programming
+
+*/
 import (
 	"fmt"
 )
