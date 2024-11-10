@@ -1,7 +1,7 @@
 =begin
 Last name: Corpuz
 Language: Ruby
-Paradigm(s): Procedural Programing
+Paradigm(s): Object-oriented Programming, Procedural Programing, Functional Programming
 =end
 
 =begin

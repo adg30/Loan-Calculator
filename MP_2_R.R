@@ -1,6 +1,8 @@
 # Last name: Lazaro
 # Language: R
-# Paradigms(s):
+# Paradigms(s):Functional Programming, Object-oriented Programming
+
+
 
 # Scans the input, removes non-numeric characters, and only keeps the numerical value
 loanAmount <- as.numeric(gsub("[^0-9.]", "", readline(prompt = "Loan Amount: ")))

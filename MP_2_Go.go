@@ -4,15 +4,15 @@ package main
 
 Last name: Go
 Language: Go
-Paradigm(s): Procedural Programming
-
+Paradigm(s): Procedural Programming, Concurrent Programming,
+			 Structural Programming
 */
 import (
 	"fmt"
 )
 
 func main() {
-	// Input: Loan amount, annual interest rate, loan term in years
+	// loan amount, annual interest rate, loan term in years
 	var loanAmount float64
 	var annualInterestRate float64
 	var loanTermYears int
@@ -24,15 +24,14 @@ func main() {
 	fmt.Print("Enter Loan Term (years): ")
 	fmt.Scan(&loanTermYears)
 
-	// Calculate monthly interest rate and loan term in months
+	// monthly interest rate and loan term in months
 	monthlyInterestRate := annualInterestRate / 12 / 100 //divide by 100 to turn decimal
 	loanTermMonths := loanTermYears * 12
 
-	// Calculate total interest and monthly repayment
-	totalInterest := loanAmount * monthlyInterestRate * float64(loanTermMonths) //go doesn't allow implicit type connversions, so type casting is required  (loanTermMonths will end up as int)
+	// total interest and monthly repayment
+	totalInterest := loanAmount * monthlyInterestRate * float64(loanTermMonths) //go doesn't allow implicit type conversions, so type casting is required  (loanTermMonths will end up as int)
 	monthlyRepayment := (loanAmount + totalInterest) / float64(loanTermMonths)
 
-	// Output the results
 	fmt.Println("\nLoan Details:")
 	fmt.Printf("Loan Amount: PHP %.2f\n", loanAmount)
 	fmt.Printf("Annual Interest Rate: %.2f%%\n", annualInterestRate)

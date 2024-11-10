@@ -2,7 +2,9 @@ fun main() {
     /*
         Last name: Punsalan
         Language: Kotlin
-        Paradigm(s): 
+        Paradigm(s): Object-oriented Programmingm, Functional programming
+                     Procedural programming, Imperative programming
+
     */
 
     // reading input
