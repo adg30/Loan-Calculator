@@ -2,32 +2,20 @@ fun main() {
     /*
         Last name: Punsalan
         Language: Kotlin
-        Paradigm(s): Object-oriented Programmingm, Functional programming
-                     Procedural programming, Imperative programming
-
+        Paradigm(s): Object-oriented Programming, Functional Programming
+                     Procedural Programming, Imperative Programming
     */
 
     // reading input
     print("Loan Amount: ")
-    var loanAmount = readln()
-                    .replace("PHP", "") // removing any "PHP" 
-                    .replace(",", "") // removing any commas
-                    .trim() // removing any trailing spaces
-                    .toFloat() // converting to float
+    var loanAmount = readln().toDouble() // converting to float
     print("Annual Interest Rate: ")
-    var interestRate = readln()
-                        .replace("%", "") // removing any percentage signs
-                        .trim() // removing any trailing spaces
-                        .toFloat() // converting to float
-                        interestRate /= 100 // converting percentage to decimal
+    var interestRate = readln().toDouble() // converting to double
     print("Loan Term: ")
-    var loanTermsYear = readln()
-                        .replace("years", "") // removing any "years"
-                        .trim() // removing any trailing spaces
-                        .toInt() // converting to int
+    var loanTermsYear = readln().toInt() // converting to int
 
     // calculating values
-    var monthlyInterestRate = interestRate / 12
+    var monthlyInterestRate = (interestRate / 100) / 12
     var loanTermsMonth = loanTermsYear * 12
     var totalInterest = loanAmount * monthlyInterestRate * loanTermsMonth
     var monthlyRepayment = (loanAmount + totalInterest) / loanTermsMonth
@@ -35,7 +23,7 @@ fun main() {
     // printing output
     println()
     println("Loan Amount: PHP %.2f".format(loanAmount))
-    println("Annual Interest Rate: %.2f%%".format(interestRate * 100))
+    println("Annual Interest Rate: $interestRate%")
     println("Loan Term: $loanTermsMonth months")
     println("Monthly Repayment: PHP %.2f".format(monthlyRepayment))
     println("Total Interest: PHP %.2f".format(totalInterest))
