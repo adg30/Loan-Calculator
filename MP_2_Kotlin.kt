@@ -2,29 +2,31 @@ fun main() {
     /*
         Last name: Punsalan
         Language: Kotlin
-        Paradigm(s): Object-oriented Programming, Functional Programming
-                     Procedural Programming, Imperative Programming
+        Paradigm(s): Object-oriented Programming, 
+                     Functional Programming,
+                     Procedural Programming, 
+                     Imperative Programming
     */
 
     // reading input
     print("Loan Amount: ")
-    var loanAmount = readln().toDouble() // converting to float
+    var loanAmount = readln().toDouble()
     print("Annual Interest Rate: ")
-    var interestRate = readln().toDouble() // converting to double
+    var annualRate = readln().toDouble()
     print("Loan Term: ")
-    var loanTermsYear = readln().toInt() // converting to int
+    var termsYear = readln().toInt()
 
     // calculating values
-    var monthlyInterestRate = (interestRate / 100) / 12
-    var loanTermsMonth = loanTermsYear * 12
-    var totalInterest = loanAmount * monthlyInterestRate * loanTermsMonth
-    var monthlyRepayment = (loanAmount + totalInterest) / loanTermsMonth
+    var monthlyRate = (annualRate / 100) / 12
+    var termsMonth = termsYear * 12
+    var totalInterest = loanAmount * monthlyRate * termsMonth
+    var monthlyRepayment = (loanAmount + totalInterest) / termsMonth
     
     // printing output
     println()
     println("Loan Amount: PHP %.2f".format(loanAmount))
-    println("Annual Interest Rate: $interestRate%")
-    println("Loan Term: $loanTermsMonth months")
+    println("Annual Interest Rate: $annualRate%")
+    println("Loan Term: $termsMonth months")
     println("Monthly Repayment: PHP %.2f".format(monthlyRepayment))
     println("Total Interest: PHP %.2f".format(totalInterest))
 }
