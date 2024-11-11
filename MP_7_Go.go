@@ -4,7 +4,8 @@ package main
 
 Last name: Go
 Language: Go
-Paradigm(s): Procedural Programming, Concurrent Programming,
+Paradigm(s): Procedural Programming,
+			 Concurrent Programming,
 			 Structural Programming
 */
 import (
