@@ -2,27 +2,24 @@
 # Language: R
 # Paradigms(s):Functional Programming, Object-oriented Programming
 
-
-
-# Scans the input, removes non-numeric characters, and only keeps the numerical value
-loanAmount <- as.numeric(gsub("[^0-9.]", "", readline(prompt = "Loan Amount: ")))
-annualInterestRate <- as.numeric(gsub("[^0-9.]", "", readline(prompt = "Annual Interest Rate: ")))
-yearsLoanTerm <- as.numeric(gsub("[^0-9.]", "", readline(prompt = "Loan Term: ")))
+# Scans the input and converts to numeric
+loanAmount <- as.numeric(readline(prompt = "Loan Amount (PHP): "))
+annualInterestRate <- as.numeric(readline(prompt = "Annual Interest Rate (%): "))
+yearsLoanTerm <- as.numeric(readline(prompt = "Loan Term (years): "))
 
 # Calculates the values
-monthlyInterestRate <- annualInterestRate / 12 / 100 # Divided by 100 to convert from percentage to decimal
+monthlyInterestRate <- annualInterestRate / 100 / 12  # Divided by 100 to convert from percentage to decimal
 monthsLoanTerm <- yearsLoanTerm * 12
 totalInterest <- (loanAmount * monthlyInterestRate) * monthsLoanTerm
 monthlyRepayment <- (loanAmount + totalInterest) / monthsLoanTerm
 
 # Prints the outputs
-# Format conventions: 
-#   round: Rounds off value to two decimal places
-#   big.mark: Inserts comma as thousands separator
-#   scientific: Ensures the value is not in scientific format
 cat("\n")
-cat("Loan Amount: PHP", format(round(loanAmount, 2), big.mark = ",", scientific = FALSE), "\n")
-cat("Annual Interest Rate:", format(annualInterestRate, scientific = FALSE), "%\n")
-cat("Loan Term:", format(monthsLoanTerm, scientific = FALSE), "months\n")
-cat("Monthly Repayment: PHP", format(round(monthlyRepayment, 2), big.mark = ",", scientific = FALSE), "\n")
-cat("Total Interest: PHP", format(round(totalInterest, 2), big.mark = ",", scientific = FALSE), "\n")
+cat(sprintf("Loan Amount: PHP %.0f\n", loanAmount))
+cat(sprintf("Annual Interest Rate: %s%%\n", annualInterestRate))
+cat(sprintf("Loan Term: %d months\n", monthsLoanTerm))
+cat(sprintf("Monthly Repayment: PHP %.2f\n", monthlyRepayment))
+cat(sprintf("Total Interest: PHP %.0f\n", totalInterest))
+
+# Sources
+# https://www.geeksforgeeks.org/print-a-formatted-string-in-r-programming-sprintf-function/
